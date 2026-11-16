@@ -26,7 +26,7 @@ def layout(file, title, desc, body):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title} | Powering Tomorrow – SDG 7</title>
+  <title>{title} | SolarPunk – SDG 7</title>
   <meta name="description" content="{desc}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
   <link rel="stylesheet" href="css/styles.css">
@@ -35,7 +35,7 @@ def layout(file, title, desc, body):
   <a class="skip" href="#main">Skip to main content</a>
   <header class="site-header">
     <nav class="nav container" aria-label="Main">
-      <a class="brand" href="index.html"><span class="brand-badge" aria-hidden="true">7</span> Powering Tomorrow</a>
+      <a class="brand" href="index.html"><span class="brand-badge" aria-hidden="true">☀</span> SolarPunk</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">☰ Menu</button>
       <ul class="nav-links" id="nav-links">
 {nav}
@@ -47,7 +47,7 @@ def layout(file, title, desc, body):
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p>© <span id="year">2026</span> Powering Tomorrow — a student project on UN Sustainable Development Goal 7.</p>
+      <p>© <span id="year">2026</span> SolarPunk — University of South Florida, Department of Electrical Engineering. A student project on UN Sustainable Development Goal 7.</p>
       <p><a href="sources.html">Sources</a> · <a href="disclaimer.html">Disclaimer</a> · <a href="https://sdgs.un.org/goals/goal7" rel="noopener">UN SDG 7</a></p>
     </div>
   </footer>
@@ -68,9 +68,9 @@ content = {}
 # ---------------- HOME ----------------
 content["index.html"] = ("Home", "A public guide to UN Sustainable Development Goal 7: affordable, reliable, sustainable and modern energy for all.", f"""    <section class="hero">
       <div class="container">
-        <p class="eyebrow">UN Sustainable Development Goal 7</p>
-        <h1>Affordable and clean energy for everyone</h1>
-        <p class="lead">Electricity lights classrooms, keeps vaccines cold and powers small businesses. Yet hundreds of millions of people still live without it. This site explains why Goal 7 matters, how engineers are solving the problem, and what it means for the economy.</p>
+        <p class="eyebrow">SolarPunk · UN Sustainable Development Goal 7</p>
+        <h1>Honest answers about affordable, clean energy</h1>
+        <p class="lead">Electricity is becoming one of the fastest-rising costs in American households, and demand keeps climbing as AI data centers are built. If you’re a Florida homeowner wondering whether clean energy like solar makes sense for you, you deserve information that is accurate and free of a sales pitch. We’re four USF electrical engineering students, and we have nothing to sell you.</p>
         <a class="btn" href="goal7.html">Learn about Goal 7</a>
         <a class="btn alt" href="engineering.html">See the solutions</a>
       </div>
@@ -95,34 +95,53 @@ content["index.html"] = ("Home", "A public guide to UN Sustainable Development G
           <article class="card"><div class="icon" aria-hidden="true">🎯</div><h3><a href="goal7.html">Goal 7 explained</a></h3><p>The five targets, where the world stands today, and who is being left behind.</p></article>
           <article class="card"><div class="icon" aria-hidden="true">🛠️</div><h3><a href="engineering.html">Engineering solutions</a></h3><p>Solar mini-grids, wind, clean cookstoves, batteries and efficiency — how they work.</p></article>
           <article class="card"><div class="icon" aria-hidden="true">💡</div><h3><a href="economic.html">Economic impact</a></h3><p>Falling costs, new jobs and the price of doing nothing.</p></article>
-          <article class="card"><div class="icon" aria-hidden="true">👥</div><h3><a href="about.html">About our group</a></h3><p>Meet the students behind this project and what each of us researched.</p></article>
+          <article class="card"><div class="icon" aria-hidden="true">👥</div><h3><a href="about.html">About SolarPunk</a></h3><p>Meet the four USF electrical engineering students behind this project and why you can trust what we say.</p></article>
         </div>
       </div>
     </section>""")
 
 # ---------------- ABOUT ----------------
 members = [
-    ("AJ", "Alex Johnson", "Project lead &amp; Goal 7 research", "Coordinated the team, wrote the Goal 7 page and checked every statistic against the original reports."),
-    ("PS", "Priya Sharma", "Engineering solutions", "Researched solar mini-grids, clean cookstoves and battery storage for the Engineering Solutions page."),
-    ("ML", "Marcus Lee", "Economic analysis", "Studied cost trends and green jobs data from IRENA and the IEA for the Economic Impact page."),
-    ("SO", "Sofia Okafor", "Web design &amp; sources", "Designed and built the website, checked accessibility, and managed the citation list."),
+    ("aden-rice", "Aden Rice", "Senior, Electrical Engineering",
+     "A small-town Floridian who values direct, practical communication. Through labs and technical projects, Aden has learned to test ideas, find what went wrong and adjust the plan.",
+     ["Practical problem solving", "Clear, direct communication", "Adaptable when plans change"]),
+    ("caylee-ward", "Caylee Ward", "Junior, Electrical Engineering",
+     "Treasurer of IEEE at USF and an organizer of its first employer-facing career fair with five sister chapters. Since 2020 she has co-run St. Pete Shopping Company, a concierge grocery business she co-founded with her mother.",
+     ["Communication-first teammate", "Leadership &amp; follow-through", "Explains tech to non-engineers"]),
+    ("aitor-castellanos-neri", "Aitor Castellanos-Neri", "Senior, Electrical Engineering · Judy Genshaft Honors College",
+     "Raised between Veracruz, Mexico, and the U.S. in a family of engineers. He was a hardware test engineering intern at IBM Power, is USF Chapter President of SMTA, and has worked as a USF robotics camp counselor.",
+     ["Technical integration", "Bicultural perspective", "Chapter leadership"]),
+    ("jacob-delikat", "Jacob Delikat", "Senior, Electrical Engineering",
+     "Of mixed Indian and Polish heritage, Jacob has presented at an ASEE engineering conference and interned at NetScout. Travel to Japan and London taught him to observe, ask questions and adapt.",
+     ["Analytical thinking", "Evidence-based decisions", "Formal technical presenting"]),
 ]
-cards = "\n".join(f"""          <article class="card member"><div class="avatar" aria-hidden="true">{i}</div><h3>{n}</h3><p class="role">{r}</p><p>{d}</p></article>""" for i, n, r, d in members)
-content["about.html"] = ("About Us", "Meet the student group behind the Powering Tomorrow SDG 7 project.", banner("About us", "Meet the team", "We are a group of students who chose Goal 7 because energy quietly underpins almost every other Sustainable Development Goal — health, education, jobs and climate.") + f"""
+cards = "\n".join(f"""          <article class="card member">
+            <img class="photo" src="images/{img}.jpg" alt="Portrait of {n}" width="140" height="140" loading="lazy">
+            <h3>{n}</h3><p class="role">{r}</p><p>{d}</p>
+            <ul class="tags">{"".join(f"<li>{t}</li>" for t in tags)}</ul>
+          </article>""" for img, n, r, d, tags in members)
+content["about.html"] = ("About Us", "Meet SolarPunk, four USF electrical engineering students behind this SDG 7 project.", banner("About us", "We’re SolarPunk", "Four electrical engineering students at the University of South Florida. We give you an honest picture of clean energy: what it can save, what it costs, and when it may not be the right fit.") + f"""
     <section>
-      <div class="container">
-        <h2>Group members</h2>
-        <div class="grid">
-{cards}
+      <div class="container two-col">
+        <div class="prose">
+          <h2>Why this matters now</h2>
+          <p>Electricity is becoming one of the fastest-rising costs in American households. Demand is climbing as the growth of artificial intelligence drives the construction of data centers. The energy choices we make today also shape the communities we will live in tomorrow. As Florida homeowners weigh whether clean energy like solar makes sense for them, they deserve information that is accurate and free of a sales pitch.</p>
+          <h2>Why you can trust us</h2>
+          <p>One of our main learning goals is understanding energy systems: how electricity is generated, delivered and used. Our team has tested the same class of enterprise servers that fill today’s data centers, so we have seen firsthand the demand that is driving up energy prices. We have also completed industry internships directly connected to power systems and how they are used every day. In every lab and project, we have learned to test ideas against evidence instead of accepting the first answer.</p>
+          <p>Technical knowledge alone doesn’t make engineers trustworthy communicators. Whether we were teaching robotics to campers with no technical background or helping everyday customers through a small business, we learned to meet people where they are. As leaders in engineering student organizations, we have also coordinated classmates, recruiters and industry partners toward shared goals.</p>
         </div>
+        <aside class="callout">
+          <h3>We have nothing to sell you</h3>
+          <p>SolarPunk earns nothing from your decision. As Floridians who have lived through major hurricanes, we know how much a reliable source of power matters at home. We want you to make the choice that is best for your community.</p>
+        </aside>
       </div>
     </section>
     <section class="tint">
-      <div class="container prose">
-        <h2>Why we chose this goal</h2>
-        <p>When a clinic has no reliable power, it cannot refrigerate vaccines. When a student has no light after sunset, homework stops. We wanted to understand why, in a world with abundant sunshine and wind, so many people still lack basic energy — and what practical, affordable fixes already exist.</p>
-        <h2>How we worked</h2>
-        <p>Each member researched one area using reports from the United Nations, the International Energy Agency (IEA), the International Renewable Energy Agency (IRENA), the World Bank and the World Health Organization. All figures on this site link to the <a href="sources.html">Sources</a> page.</p>
+      <div class="container">
+        <h2>Meet the team</h2>
+        <div class="grid team">
+{cards}
+        </div>
       </div>
     </section>""")
 
@@ -252,6 +271,17 @@ content["economic.html"] = ("Economic Impact", "The economics of SDG 7: falling 
       </div>
     </section>
     <section>
+      <div class="container">
+        <h2>Is solar right for your Florida home? An honest checklist</h2>
+        <div class="grid">
+          <div class="card"><h3>✅ It may be a good fit if…</h3><ul><li>Your roof gets strong sun and has few shade trees</li><li>Your roof is in good condition and won’t need replacing soon</li><li>You plan to stay in the home for many years</li><li>Your electricity bills are high and keep rising</li></ul></div>
+          <div class="card"><h3>⚠️ Think carefully if…</h3><ul><li>Your roof is shaded, small, or nearing the end of its life</li><li>You may move soon</li><li>A loan or lease has fees that cancel out the savings</li><li>Your HOA or utility has rules that limit installation or credits</li></ul></div>
+          <div class="card"><h3>🌀 Hurricane reality check</h3><p>Panels on their own usually shut off during a grid outage for safety reasons. If backup power during storms matters to you, ask specifically about <strong>battery storage</strong> and whether the system can run while the grid is down.</p></div>
+        </div>
+        <p class="note">General guidance only, not financial advice. Get several quotes from licensed installers and compare them. See our <a href="disclaimer.html">Disclaimer</a>.</p>
+      </div>
+    </section>
+    <section class="tint">
       <div class="container prose">
         <h2>The cost of doing nothing</h2>
         <p>Energy poverty has hidden costs: illness and early deaths from smoky kitchens {c(5)}, lost school and work hours, spoiled food and medicines, and exposure to volatile fossil-fuel prices. Investing in Goal 7 is therefore not only an environmental choice — it is an economic one.</p>
@@ -270,7 +300,7 @@ sources = [
     ("Ritchie, H., Rosado, P., &amp; Roser, M. (n.d.). <em>Energy.</em> Our World in Data.", "https://ourworldindata.org/energy", "Further interactive data for readers."),
 ]
 items = "\n".join(f"""          <li id="src{i}">{t} <a href="{u}" rel="noopener">{u}</a><span class="used">Used for: {w}</span></li>""" for i, (t, u, w) in enumerate(sources, 1))
-content["sources.html"] = ("Sources", "References cited on the Powering Tomorrow SDG 7 website.", banner("References", "Sources", "Every statistic on this site is linked to one of the sources below. References follow APA 7th edition style.") + f"""
+content["sources.html"] = ("Sources", "References cited on the SolarPunk SDG 7 website.", banner("References", "Sources", "Every statistic on this site is linked to one of the sources below. References follow APA 7th edition style.") + f"""
     <section>
       <div class="container prose">
         <ol class="sources">
@@ -281,11 +311,13 @@ content["sources.html"] = ("Sources", "References cited on the Powering Tomorrow
     </section>""")
 
 # ---------------- DISCLAIMER ----------------
-content["disclaimer.html"] = ("Disclaimer", "Disclaimer for the Powering Tomorrow student SDG 7 website.", banner("Legal", "Disclaimer", "Please read this before relying on any information on this site.") + """
+content["disclaimer.html"] = ("Disclaimer", "Disclaimer for the SolarPunk student SDG 7 website.", banner("Legal", "Disclaimer", "Please read this before relying on any information on this site.") + """
     <section>
       <div class="container prose">
         <h2>Educational project</h2>
-        <p>This website was created by students as an academic assignment about UN Sustainable Development Goal 7. It is for educational purposes only and is not professional, engineering, financial or policy advice.</p>
+        <p>This website was created by SolarPunk, a group of electrical engineering students at the University of South Florida, as an academic assignment about UN Sustainable Development Goal 7. It is for educational purposes only and is not professional, engineering, financial or policy advice.</p>
+        <h2>No financial interest</h2>
+        <p>SolarPunk has nothing to sell. We receive no payment, commission or sponsorship from any solar installer, utility or energy company, and we earn nothing from your decisions. Before you make any energy purchase, get multiple quotes and talk to licensed local professionals.</p>
         <h2>No affiliation</h2>
         <p>We are not affiliated with, endorsed by, or speaking on behalf of the United Nations, the International Energy Agency, IRENA, the World Bank, the World Health Organization or any other organisation mentioned. The SDG name and colour are used for educational identification only, in line with the UN’s guidelines for non-commercial use.</p>
         <h2>Accuracy of information</h2>
@@ -293,7 +325,9 @@ content["disclaimer.html"] = ("Disclaimer", "Disclaimer for the Powering Tomorro
         <h2>External links</h2>
         <p>This site links to external websites. We are not responsible for their content, availability or privacy practices.</p>
         <h2>Images and names</h2>
-        <p>Icons are standard emoji characters. Group member details on the About Us page are provided by the project team.</p>
+        <p>Icons are standard emoji characters. Group member photos and biographies on the About Us page were provided by the team members and are used with their permission.</p>
+        <h2>University</h2>
+        <p>This is a student project. The views expressed are our own and do not represent the University of South Florida or its Department of Electrical Engineering.</p>
       </div>
     </section>""")
 
